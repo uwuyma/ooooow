@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ManunyaGame — Забронировать игровую сессию</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Подключаем дружелюбный шрифт -->
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel=""stylesheet" href="ewwqe.css">"
+</head>
+<body>
+    <!-- Шапка сайта с навигацией -->
+    <header class="header">
+        <div class="container">
+            <nav class="nav">
+                <a href="index.html" class="logo">
+                    <i class="fas fa-gamepad"></i> ManunyaGame
+                </a>
+                <div class="nav-links">
+                    <a href="index.html">Главная</a>
+                    <a href="games.html">Игры & Цены</a>
+                    <a href="about.html">Обо мне</a>
+                    <a href="reviews.html">Отзывы</a>
+                    <a href="contact.html" class="btn-contact">Написать</a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Основной контент страницы бронирования -->
+    <section class="booking-page">
+        <div class="container">
+            <div class="booking-hero">
+                <h1>🎮 Забронируй игровую сессию</h1>
+                <p>Выбери игру, удобное время и давай устроим отличную игровую сессию!</p>
+            </div>
+
+            <div class="booking-container">
+                <!-- Индикатор прогресса -->
+                <div class="progress-bar">
+                    <div class="progress-step active" data-step="1">
+                        <div class="step-circle">1</div>
+                        <div class="step-label">Игра</div>
+                    </div>
+                    <div class="progress-step" data-step="2">
+                        <div class="step-circle">2</div>
+                        <div class="step-label">Время</div>
+                    </div>
+                    <div class="progress-step" data-step="3">
+                        <div class="step-circle">3</div>
+                        <div class="step-label">Данные</div>
+                    </div>
+                    <div class="progress-step" data-step="4">
+                        <div class="step-circle">4</div>
+                        <div class="step-label">Подтверждение</div>
+                    </div>
+                </div>
+
+                <!-- Шаг 1: Выбор игры -->
+                <div class="form-step active" id="step-1">
+                    <h2 class="step-title"><span class="step-icon"><i class="fas fa-gamepad"></i></span> Шаг 1: Выбери игру</h2>
+                    
+                    <div class="games-selection">
+                        <div class="game-select-card" data-game="minecraft">
+                            <i class="fab fa-fort-awesome"></i>
+                            <h3>Minecraft</h3>
+                            <p>Уютные миры и приключения</p>
+                        </div>
+                        <div class="game-select-card" data-game="amongus">
+                            <i class="fas fa-ghost"></i>
+                            <h3>Among Us</h3>
+                            <p>Раскрываем предателей</p>
+                        </div>
+                        <div class="game-select-card" data-game="valorant">
+                            <i class="fas fa-crosshairs"></i>
+                            <h3>Valorant</h3>
+                            <p>Тактика и тренировка aim</p>
+                        </div>
+                        <div class="game-select-card" data-game="cs2">
+                            <i class="fas fa-crosshairs"></i>
+                            <h3>CS2</h3>
+                            <p>Классика тактических шутеров</p>
+                        </div>
+                        <div class="game-select-card" data-game="apex">
+                            <i class="fas fa-running"></i>
+                            <h3>Apex Legends</h3>
+                            <p>Быстрый и динамичный батл-рояль</p>
+                        </div>
+                        <div class="game-select-card" data-game="other">
+                            <i class="fas fa-plus"></i>
+                            <h3>Другая игра</h3>
+                            <p>Напиши свою идею</p>
+                        </div>
+                    </div>
+
+                    <div class="form-group" id="custom-game-group" style="display: none; margin-top: 20px;">
+                        <label for="custom-game">Укажи, во что хочешь поиграть:</label>
+                        <input type="text" id="custom-game" class="form-control" placeholder="Например: Fortnite, Dota 2, Genshin Impact...">
+                    </div>
+
+                    <div class="form-navigation">
+                        <button class="btn-form btn-prev" disabled>Назад</button>
+                        <button class="btn-form btn-next" data-next="2">Далее →</button>
+                    </div>
+                </div>
+
+                <!-- Шаг 2: Выбор времени -->
+                <div class="form-step" id="step-2">
+                    <h2 class="step-title"><span class="step-icon"><i class="far fa-calendar-alt"></i></span> Шаг 2: Выбери дату и время</h2>
+                    
+                    <div class="form-group">
+                        <label for="booking-date">Дата игры:</label>
+                        <input type="date" id="booking-date" class="form-control" min="">
+                    </div>
+
+                    <label>Выбери удобное время:</label>
+                    <div class="time-selection" id="time-slots">
+                        <!-- Время генерируется скриптом -->
+                    </div>
+
+                    <div class="form-group">
+                        <label for="duration">Длительность сессии:</label>
+                        <select id="duration" class="form-control">
+                            <option value="1">1 час</option>
+                            <option value="2" selected>2 часа</option>
+                            <option value="3">3 часа</option>
+                            <option value="4">4 часа</option>
+                        </select>
+                    </div>
+
+                    <div class="form-navigation">
+                        <button class="btn-form btn-prev" data-prev="1">← Назад</button>
+                        <button class="btn-form btn-next" data-next="3">Далее →</button>
+                    </div>
+                </div>
+
+                <!-- Шаг 3: Контактные данные -->
+                <div class="form-step" id="step-3">
+                    <h2 class="step-title"><span class="step-icon"><i class="far fa-user"></i></span> Шаг 3: Контактные данные</h2>
+                    
+                    <div class="form-group">
+                        <label for="player-name">Как к тебе обращаться? *</label>
+                        <input type="text" id="player-name" class="form-control" placeholder="Твоё имя или игровой ник" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="contact-method">Как с тобой связаться? *</label>
+                        <select id="contact-method" class="form-control">
+                            <option value="telegram">Telegram</option>
+                            <option value="discord">Discord</option>
+                            <option value="email">Email</option>
+                            <option value="other">Другое</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="contact-details">Контактные данные *</label>
+                        <input type="text" id="contact-details" class="form-control" placeholder="@username или example@mail.ru" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="player-level">Твой уровень в игре:</label>
+                        <select id="player-level" class="form-control">
+                            <option value="beginner">Новичок (только начинаю)</option>
+                            <option value="casual">Любитель (играю для удовольствия)</option>
+                            <option value="experienced">Опытный (знаю все механики)</option>
+                            <option value="pro">Продвинутый (ищу сложные игры)</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="notes">Дополнительные пожелания:</label>
+                        <textarea id="notes" class="form-control" rows="4" placeholder="Например: хочу научиться базиться в Minecraft, нужна помощь в прохождении уровня..."></textarea>
+                    </div>
+
+                    <div class="form-navigation">
+                        <button class="btn-form btn-prev" data-prev="2">← Назад</button>
+                        <button class="btn-form btn-next" data-next="4">Продолжить →</button>
+                    </div>
+                </div>
+
+                <!-- Шаг 4: Подтверждение -->
+                <div class="form-step" id="step-4">
+                    <h2 class="step-title"><span class="step-icon"><i class="far fa-check-circle"></i></span> Шаг 4: Подтверждение бронирования</h2>
+                    
+                    <div class="booking-summary">
+                        <h3 style="margin-bottom: 20px; color: #3a3a3a;">Сводка заказа:</h3>
+                        
+                        <div class="summary-item">
+                            <span>Игра:</span>
+                            <span id="summary-game">-</span>
+                        </div>
+                        <div class="summary-item">
+                            <span>Дата и время:</span>
+                            <span id="summary-datetime">-</span>
+                        </div>
+                        <div class="summary-item">
+                            <span>Длительность:</span>
+                            <span id="summary-duration">-</span>
+                        </div>
+                        <div class="summary-item">
+                            <span>Имя:</span>
+                            <span id="summary-name">-</span>
+                        </div>
+                        <div class="summary-item">
+                            <span>Контакт:</span>
+                            <span id="summary-contact">-</span>
+                        </div>
+                        <div class="summary-item">
+                            <span>Уровень:</span>
+                            <span id="summary-level">-</span>
+                        </div>
+                        <div class="summary-item total">
+                            <span>Итого к оплате:</span>
+                            <span id="summary-price">- ₽</span>
+                        </div>
+                    </div>
+
+                    <div class="form-group" style="margin-top: 25px;">
+                        <label for="terms">
+                            <input type="checkbox" id="terms" required>
+                            Я соглашаюсь с <a href="#" style="color: #ff6b9d;">правилами бронирования</a> и подтверждаю бронь
+                        </label>
+                    </div>
+
+                    <div class="form-navigation">
+                        <button class="btn-form btn-prev" data-prev="3">← Назад</button>
+                        <button class="btn-form btn-submit" id="submit-booking">✅ Забронировать</button>
+                    </div>
+                </div>
+
+                <!-- Сообщение об успешном бронировании -->
+                <div class="success-message" id="success-message">
+                    <div class="success-icon">
+                        <i class="fas fa-check"></i>
+                    </div>
+                    <h2>🎉 Бронирование подтверждено!</h2>
+                    <p>Я уже получила твою заявку и свяжусь с тобой в течение 24 часов для уточнения деталей.</p>
+                    <p>А пока можешь подготовиться к игре! 🎮</p>
+                    <div style="margin-top: 30px;">
+                        <a href="index.html" class="btn" style="margin-right: 15px;">На главную</a>
+                        <a href="games.html" class="btn btn-secondary">Посмотреть другие игры</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Подвал сайта -->
+    <footer class="footer">
+        <div class="container">
+            <p>© 2023 ManunyaGame. Играем с душой.</p>
+            <div class="footer-links">
+                <a href="#"><i class="fab fa-discord"></i> Discord</a>
+                <a href="#"><i class="fab fa-telegram"></i> Telegram</a>
+                <a href="#"><i class="fab fa-twitch"></i> Twitch</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Инициализация
+        document.addEventListener('DOMContentLoaded', function() {
+            // Установка минимальной даты (сегодня)
+            const dateInput = document.getElementById('booking-date');
+            const today = new Date().toISOString().split('T')[0];
+            dateInput.min = today;
+            dateInput.value = today;
+
+            // Генерация временных слотов
+            generateTimeSlots();
+
+            // Выбор игры
+            const gameCards = document.querySelectorAll('.game-select-card');
+            const customGameGroup = document.getElementById('custom-game-group');
+            const customGameInput = document.getElementById('custom-game');
+            let selectedGame = '';
+
+            gameCards.forEach(card => {
+                card.addEventListener('click', function() {
+                    gameCards.forEach(c => c.classList.remove('selected'));
+                    this.classList.add('selected');
+                    selectedGame = this.dataset.game;
+
+                    if (selectedGame === 'other') {
+                        customGameGroup.style.display = 'block';
+                        customGameInput.required = true;
+                    } else {
+                        customGameGroup.style.display = 'none';
+                        customGameInput.required = false;
+                    }
+                });
+            });
+
+            // Выбор времени
+            let selectedTime = '';
+
+            // Навигация по шагам
+            const nextButtons = document.querySelectorAll('.btn-next');
+            const prevButtons = document.querySelectorAll('.btn-prev');
+            const steps = document.querySelectorAll('.form-step');
+            const progressSteps = document.querySelectorAll('.progress-step');
+            let currentStep = 1;
+
+            nextButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const nextStep = parseInt(this.dataset.next);
+                    
+                    // Проверка данных перед переходом
+                    if (!validateStep(currentStep)) return;
+
+                    goToStep(nextStep);
+                });
+            });
+
+            prevButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const prevStep = parseInt(this.dataset.prev);
+                    goToStep(prevStep);
+                });
+            });
+
+            function goToStep(step) {
+                // Скрыть все шаги
+                steps.forEach(s => s.classList.remove('active'));
+                progressSteps.forEach(p => p.classList.remove('active'));
+
+                // Показать нужный шаг
+                document.getElementById(`step-${step}`).classList.add('active');
+                progressSteps.forEach(p => {
+                    if (parseInt(p.dataset.step) <= step) {
+                        p.classList.add('active');
+                    }
+                });
+
+                currentStep = step;
+                updateSummary();
+            }
+
+            function validateStep(step) {
+                switch(step) {
+                    case 1:
+                        if (!selectedGame) {
+                            alert('Пожалуйста, выбери игру');
+                            return false;
+                        }
+                        if (selectedGame === 'other' && !customGameInput.value.trim()) {
+                            alert('Пожалуйста, укажи, во что хочешь поиграть');
+                            return false;
+                        }
+                        return true;
+
+                    case 2:
+                        if (!dateInput.value) {
+                            alert('Пожалуйста, выбери дату');
+                            return false;
+                        }
+                        if (!selectedTime) {
+                            alert('Пожалуйста, выбери время');
+                            return false;
+                        }
+                        return true;
+
+                    case 3:
+                        const name = document.getElementById('player-name').value.trim();
+                        const contact = document.getElementById('contact-details').value.trim();
+                        
+                        if (!name) {
+                            alert('Пожалуйста, введи своё имя');
+                            return false;
+                        }
+                        if (!contact) {
+                            alert('Пожалуйста, введи контактные данные');
+                            return false;
+                        }
+                        return true;
+
+                    default:
+                        return true;
+                }
+            }
+
+            // Генерация временных слотов
+            function generateTimeSlots() {
+                const container = document.getElementById('time-slots');
+                container.innerHTML = '';
+                
+                const times = ['18:00', '19:00', '20:00', '21:00', '22:00', '23:00'];
+                
+                times.forEach(time => {
+                    const slot = document.createElement('div');
+                    slot.className = 'time-slot';
+                    slot.textContent = time;
+                    slot.dataset.time = time;
+                    
+                    // Рандомно "забронируем" некоторые слоты для примера
+                    if (Math.random() > 0.7) {
+                        slot.classList.add('booked');
+                        slot.title = 'Это время уже занято';
+                    } else {
+                        slot.addEventListener('click', function() {
+                            if (!this.classList.contains('booked')) {
+                                document.querySelectorAll('.time-slot').forEach(s => s.classList.remove('selected'));
+                                this.classList.add('selected');
+                                selectedTime = this.dataset.time;
+                            }
+                        });
+                    }
+                    
+                    container.appendChild(slot);
+                });
+            }
+
+            // Обновление сводки
+            function updateSummary() {
+                if (currentStep !== 4) return;
+
+                // Получение данных игры
+                let gameName = '';
+                if (selectedGame === 'other') {
+                    gameName = customGameInput.value || 'Другая игра';
+                } else {
+                    const selectedCard = document.querySelector('.game-select-card.selected');
+                    gameName = selectedCard ? selectedCard.querySelector('h3').textContent : 'Игра не выбрана';
+                }
+
+                // Обновление сводки
+                document.getElementById('summary-game').textContent = gameName;
+                document.getElementById('summary-datetime').textContent = 
+                    `${dateInput.value} в ${selectedTime || 'не выбрано'}`;
+                document.getElementById('summary-duration').textContent = 
+                    `${document.getElementById('duration').value} часа`;
+                document.getElementById('summary-name').textContent = 
+                    document.getElementById('player-name').value || '-';
+                
+                const contactMethod = document.getElementById('contact-method').value;
+                const contactDetails = document.getElementById('contact-details').value;
+                document.getElementById('summary-contact').textContent = 
+                    `${contactMethod}: ${contactDetails}`;
+                
+                document.getElementById('summary-level').textContent = 
+                    document.getElementById('player-level').selectedOptions[0].text;
+
+                // Расчет цены
+                const duration = parseInt(document.getElementById('duration').value);
+                const basePrice = 500; // Базовая цена за час
+                const totalPrice = basePrice * duration;
+                document.getElementById('summary-price').textContent = `${totalPrice} ₽`;
+            }
+
+            // Обработка изменений данных для обновления сводки
+            document.getElementById('player-name').addEventListener('input', updateSummary);
+            document.getElementById('contact-details').addEventListener('input', updateSummary);
+            document.getElementById('duration').addEventListener('change', updateSummary);
+            dateInput.addEventListener('change', updateSummary);
+
+            // Отправка формы
+            document.getElementById('submit-booking').addEventListener('click', function() {
+                if (!document.getElementById('terms').checked) {
+                    alert('Пожалуйста, подтверди согласие с правилами');
+                    return;
+                }
+
+                // Сбор данных
+                const bookingData = {
+                    game: selectedGame === 'other' ? customGameInput.value : selectedGame,
+                    date: dateInput.value,
+                    time: selectedTime,
+                    duration: document.getElementById('duration').value,
+                    name: document.getElementById('player-name').value,
+                    contactMethod: document.getElementById('contact-method').value,
+                    contactDetails: document.getElementById('contact-details').value,
+                    level: document.getElementById('player-level').value,
+                    notes: document.getElementById('notes').value,
+                    timestamp: new Date().toISOString()
+                };
+
+                // Здесь обычно отправка на сервер
+                console.log('Бронирование:', bookingData);
+
+                // Показ успешного сообщения
+                document.querySelectorAll('.form-step').forEach(s => s.style.display = 'none');
+                document.getElementById('success-message').style.display = 'block';
+                document.querySelector('.progress-bar').style.display = 'none';
+            });
+
+            // Инициализация первого шага
+            goToStep(1);
+        });
+    </script>
+</body>
+</html>

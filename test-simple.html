@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Простой тест</title>
+    <style>
+        * { margin: 0; padding: 0; }
+        body {
+            background: #f8f5f2;
+            height: 100vh;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .test-bubble {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(40px);
+            animation: pulse 4s infinite alternate;
+        }
+        
+        .b1 {
+            width: 300px;
+            height: 300px;
+            top: -100px;
+            left: -100px;
+            background: rgba(255, 184, 217, 0.5);
+        }
+        
+        .b2 {
+            width: 400px;
+            height: 400px;
+            bottom: -150px;
+            right: -150px;
+            background: rgba(214, 200, 255, 0.4);
+            animation-delay: 2s;
+        }
+        
+        @keyframes pulse {
+            from { opacity: 0.3; transform: scale(1); }
+            to { opacity: 0.7; transform: scale(1.1); }
+        }
+        
+        .test-text {
+            position: relative;
+            z-index: 10;
+            text-align: center;
+            padding: 50px;
+            font-size: 24px;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <div class="test-bubble b1"></div>
+    <div class="test-bubble b2"></div>
+    
+    <div class="test-text">
+        <h1>🚨 ТЕСТ 🚨</h1>
+        <p>Видно ли розовый и фиолетовый пузыри?</p>
+        <p>Если ДА — значит CSS работает</p>
+        <p>Если НЕТ — значит проблема в чём-то другом</p>
+    </div>
+</body>
+</html>

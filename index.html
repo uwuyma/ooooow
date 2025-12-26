@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ManunyaGame — играй с настроением</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Подключаем дружелюбный шрифт -->
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<!-- Пузырьки-волны -->
+<link rel="stylesheet" href="waves.css">
+<!-- Контейнер с пузырьками -->
+<!-- Контейнер с пузырьками -->
+</head>
+<body>
+    <!-- Шапка сайта с навигацией -->
+    <header class="header">
+        <div class="container">
+            <nav class="nav">
+                <a href="index.html" class="logo">
+                    <i class="fas fa-gamepad"></i> ManunyaGame
+                </a>
+                <div class="nav-links">
+                    <a href="index.html">Главная</a>
+                    <a href="games.html">Игры & Цены</a>
+                    <a href="about.html">Обо мне</a>
+                    <a href="reviews.html">Отзывы</a>
+                    <a href="contact.html" class="btn-contact">Написать</a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Герой-секция (самый важный блок) -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title">Игра должна приносить <span class="highlight">кайф</span>, а не стресс</h1>
+                <p class="hero-subtitle">Привет! Я Манюня — твой проводник в мир уютных и весёлых игр. Устал играть в одиночку котик? Давай исправим это!</p>
+                <div class="hero-buttons">
+                    <a href="games.html" class="btn btn-primary">Выбрать игру</a>
+                    <a href="contact.html" class="btn btn-secondary">Узнать подробнее</a>
+                </div>
+            </div>
+            
+            <div class="hero-image">
+                <div class="profile-photo-container">
+                    <img src="image/image-mee.jpg" alt="Манюня - игровой компаньон" class="profile-photo">
+                </div>
+            </div>
+        </div>
+    </section> <!-- ЗДЕСЬ ДОЛЖЕН БЫТЬ ЗАКРЫВАЮЩИЙ ТЕГ -->
+
+    <!-- Секция "Почему я" -->
+    <section class="features">
+        <div class="container">
+            <h2 class="section-title">Почему играть со мной — это здорово</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon" style="background-color: #ffb8d9;">
+                        <i class="fas fa-comments"></i>
+                    </div>
+                    <h3>Поддержка в голосовом чате</h3>
+                    <p>Обсуждаем тактику, шутим или просто болтаем — всегда на связи в Discord.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon" style="background-color: #b8e6d6;">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <h3>Помощь новичкам</h3>
+                    <p>Объясню любую механику без давления и сложных терминов.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon" style="background-color: #d6c8ff;">
+                        <i class="fas fa-heart"></i>
+                    </div>
+                    <h3>Только позитив</h3>
+                    <p>Никакого токсика и оскорблений. Здесь зона комфортной игры.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Секция "Популярные игры" -->
+    <section class="games-preview">
+        <div class="container">
+            <h2 class="section-title">Во что чаще всего играем</h2>
+            <div class="games-grid">
+                <div class="game-card">
+                    <div class="game-icon">
+                        <i class="fab fa-fort-awesome"></i>
+                    </div>
+                    <h3>Minecraft</h3>
+                    <p>Строим уютные миры, выживаем или устраиваем безумные приключения.</p>
+                </div>
+                <div class="game-card">
+                    <div class="game-icon">
+                        <i class="fas fa-ghost"></i>
+                    </div>
+                    <h3>Among Us</h3>
+                    <p>Раскрываем предателей или мастерски водим всех за нос.</p>
+                </div>
+                <div class="game-card">
+                    <div class="game-icon">
+                        <i class="fas fa-crosshairs"></i>
+                    </div>
+                    <h3>Valorant / CS2</h3>
+                    <p>Отработка тактик, тренировка aim или просто казуальные игры.</p>
+                </div>
+                <div class="game-card">
+                    <div class="game-icon">
+                        <i class="fas fa-dragon"></i>
+                    </div>
+                    <h3>MMO RPG</h3>
+                    <p>Исследуем огромные миры, проходим подземелья и собираем лута.</p>
+                </div>
+            </div>
+            <div class="text-center">
+                <a href="games.html" class="btn btn-outline">Смотреть все игры →</a>
+            </div>
+        </div>
+    </section>
+<!-- Подвал сайта -->
+    <footer class="footer">
+        <div class="container">
+            <p>© 2023 ManunyaGame. Играем с душой.</p>
+            <div class="footer-links">
+                <a href="#"><i class="fab fa-discord"></i> Discord</a>
+                <a href="#"><i class="fab fa-telegram"></i> Telegram</a>
+                <a href="#"><i class="fab fa-twitch"></i> Twitch</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

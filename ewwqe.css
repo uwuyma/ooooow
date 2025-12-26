@@ -1,0 +1,364 @@
+/* Дополнительные стили для страницы бронирования */
+        .booking-page {
+            padding: 60px 0 80px;
+            min-height: 100vh;
+        }
+
+        .booking-hero {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .booking-hero h1 {
+            font-size: 42px;
+            color: #3a3a3a;
+            margin-bottom: 15px;
+        }
+
+        .booking-hero p {
+            font-size: 18px;
+            color: #777;
+            max-width: 600px;
+            margin: 0 auto 30px;
+        }
+
+        .booking-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 25px;
+            padding: 40px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
+            position: relative;
+            z-index: 10;
+        }
+
+        .form-step {
+            display: none;
+            animation: fadeIn 0.5s ease;
+        }
+
+        .form-step.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .step-title {
+            font-size: 28px;
+            color: #3a3a3a;
+            margin-bottom: 30px;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .step-icon {
+            background: #ffb8d9;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            color: #3a3a3a;
+            font-weight: 600;
+            font-size: 16px;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 15px 20px;
+            border: 2px solid #e0e0e0;
+            border-radius: 15px;
+            font-family: 'Nunito', sans-serif;
+            font-size: 16px;
+            transition: all 0.3s;
+            background: #f9f9f9;
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: #ffb8d9;
+            background: white;
+            box-shadow: 0 0 0 3px rgba(255, 184, 217, 0.1);
+        }
+
+        /* Выбор игры */
+        .games-selection {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 15px;
+            margin-top: 10px;
+        }
+
+        .game-select-card {
+            background: #f9f9f9;
+            border: 2px solid #e0e0e0;
+            border-radius: 15px;
+            padding: 20px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .game-select-card:hover {
+            border-color: #ffb8d9;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(255, 184, 217, 0.1);
+        }
+
+        .game-select-card.selected {
+            background: #fff5f9;
+            border-color: #ffb8d9;
+            color: #ff6b9d;
+        }
+
+        .game-select-card i {
+            font-size: 32px;
+            margin-bottom: 10px;
+            color: #ffb8d9;
+        }
+
+        /* Выбор времени */
+        .time-selection {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+            gap: 12px;
+            margin-top: 10px;
+        }
+
+        .time-slot {
+            background: #f9f9f9;
+            border: 2px solid #e0e0e0;
+            border-radius: 12px;
+            padding: 12px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-weight: 600;
+        }
+
+        .time-slot:hover {
+            border-color: #b8e6d6;
+            background: #f0f9f5;
+        }
+
+        .time-slot.selected {
+            background: #b8e6d6;
+            border-color: #8ad4b8;
+            color: #2a6b55;
+        }
+
+        .time-slot.booked {
+            background: #ffe6e6;
+            border-color: #ffcccc;
+            color: #cc6666;
+            cursor: not-allowed;
+            opacity: 0.6;
+        }
+
+        /* Кнопки навигации */
+        .form-navigation {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 40px;
+            padding-top: 30px;
+            border-top: 2px solid #f0f0f0;
+        }
+
+        .btn-form {
+            padding: 15px 30px;
+            border-radius: 50px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s;
+            border: none;
+            font-family: 'Nunito', sans-serif;
+            font-size: 16px;
+        }
+
+        .btn-prev {
+            background: #f0f0f0;
+            color: #666;
+        }
+
+        .btn-prev:hover {
+            background: #e0e0e0;
+        }
+
+        .btn-next, .btn-submit {
+            background: #ffb8d9;
+            color: #3a3a3a;
+        }
+
+        .btn-next:hover, .btn-submit:hover {
+            background: #ff9bc9;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(255, 184, 217, 0.3);
+        }
+
+        /* Индикатор прогресса */
+        .progress-bar {
+            display: flex;
+            justify-content: space-between;
+            position: relative;
+            margin-bottom: 40px;
+        }
+
+        .progress-bar::before {
+            content: '';
+            position: absolute;
+            top: 20px;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: #e0e0e0;
+            z-index: 1;
+        }
+
+        .progress-step {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            flex: 1;
+        }
+
+        .step-circle {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: #e0e0e0;
+            color: #888;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 10px;
+            font-weight: 700;
+            transition: all 0.3s;
+        }
+
+        .progress-step.active .step-circle {
+            background: #ffb8d9;
+            color: white;
+            transform: scale(1.1);
+        }
+
+        .step-label {
+            font-size: 14px;
+            color: #888;
+            font-weight: 600;
+        }
+
+        .progress-step.active .step-label {
+            color: #ff6b9d;
+        }
+
+        /* Сводка бронирования */
+        .booking-summary {
+            background: #f9f9f9;
+            border-radius: 15px;
+            padding: 25px;
+            margin-top: 30px;
+        }
+
+        .summary-item {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 15px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        .summary-item:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .summary-item.total {
+            font-weight: 700;
+            font-size: 18px;
+            color: #3a3a3a;
+            margin-top: 20px;
+            padding-top: 20px;
+            border-top: 2px solid #e0e0e0;
+        }
+
+        /* Сообщение об успехе */
+        .success-message {
+            text-align: center;
+            padding: 50px 20px;
+            display: none;
+        }
+
+        .success-icon {
+            width: 100px;
+            height: 100px;
+            background: #b8e6d6;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 30px;
+            color: white;
+            font-size: 48px;
+        }
+
+        .success-message h2 {
+            color: #3a3a3a;
+            margin-bottom: 20px;
+        }
+
+        .success-message p {
+            color: #666;
+            margin-bottom: 30px;
+            font-size: 18px;
+        }
+
+        /* Адаптивность */
+        @media (max-width: 768px) {
+            .booking-container {
+                padding: 25px 20px;
+            }
+
+            .booking-hero h1 {
+                font-size: 32px;
+            }
+
+            .games-selection {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .time-selection {
+                grid-template-columns: repeat(3, 1fr);
+            }
+
+            .form-navigation {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .btn-form {
+                width: 100%;
+            }
+
+            .step-title {
+                font-size: 24px;
+            }
+        }

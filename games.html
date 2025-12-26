@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Игры & Цены | ManunyaGame</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="waves.css"> <!-- Пузырьки! -->
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Дополнительные стили для этой страницы */
+        .games-hero {
+            text-align: center;
+            padding: 80px 0 50px;
+        }
+        
+        .games-hero h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+        
+        .games-hero p {
+            font-size: 20px;
+            color: #777;
+            max-width: 700px;
+            margin: 0 auto 40px;
+        }
+        
+        /* Иконка Dota 2 */
+        .fa-dota {
+            font-family: 'Font Awesome 6 Brands';
+            font-weight: 400;
+        }
+        
+        .fa-dota:before {
+            content: '\f6cb';
+        }
+    </style>
+</head>
+<body>
+    <!-- Шапка (такая же) -->
+    <header class="header">
+        <div class="container">
+            <nav class="nav">
+                <a href="index.html" class="logo">
+                    <i class="fas fa-gamepad"></i> ManunyaGame
+                </a>
+                <div class="nav-links">
+                    <a href="index.html">Главная</a>
+                    <a href="games.html" style="color: #ffb8d9;">Игры & Цены</a> <!-- Активная -->
+                    <a href="about.html">Обо мне</a>
+                    <a href="reviews.html">Отзывы</a>
+                    <a href="contact.html" class="btn-contact">Написать</a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Герой-секция -->
+    <section class="games-hero">
+        <div class="container">
+            <h1>Выбери свою игру <span class="highlight">и формат</span></h1>
+            <p>Играем в Discord с голосовым чатом. Можно выбрать один час или пакет со скидкой!</p>
+        </div>
+    </section>
+
+    <!-- Таблица цен -->
+    <section class="pricing">
+        <div class="container">
+            <div class="pricing-table">
+                <!-- Minecraft -->
+                <div class="price-card popular">
+                    <div class="price-badge">Популярно</div>
+                    <div class="game-icon-large">
+                        <i class="fab fa-fort-awesome"></i>
+                    </div>
+                    <h3>Minecraft</h3>
+                    <p class="game-description">Строим, выживаем, создаём уютные миры и спим в одной кроватке..</p>
+                    
+                    <div class="price-options">
+                        <div class="price-option">
+                            <h4>1 час</h4>
+                            <div class="price">800 ₽</div>
+                            <p>Знакомство с игрой</p>
+                            <a href="contact.html?game=minecraft&hours=1" class="btn btn-primary btn-small">Выбрать</a>
+                        </div>
+                        <div class="price-option recommended">
+                            <div class="rec-badge">Выгодно</div>
+                            <h4>3 часа</h4>
+                            <div class="price">2 000 ₽</div>
+                            <div class="price-save">Экономия 400 ₽</div>
+                            <p>Полноценная игровая сессия</p>
+                            <a href="contact.html?game=minecraft&hours=3" class="btn btn-primary btn-small">Выбрать</a>
+                        </div>
+                        <div class="price-option">
+                            <h4>Вечер игры</h4>
+                            <div class="price">3 500 ₽</div>
+                            <p>5+ часов с перерывами</p>
+                            <a href="contact.html?game=minecraft&hours=5" class="btn btn-primary btn-small">Выбрать</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Dota 2 -->
+                <div class="price-card">
+                    <div class="game-icon-large">
+    <i class="fas fa-shield-alt"></i>
+    <i class="fas fa-sword" style="position: relative; left: -10px;"></i>
+</div>
+                    <h3>Dota 2</h3>
+                    <p class="game-description">Сапорчу на водоносиках, хвалю послей каждого килла и утешаю после лузика (у нас их не будет)</p>
+                    
+                    <div class="price-options">
+                        <div class="price-option">
+                            <h4>1 матч</h4>
+                            <div class="price">900 ₽</div>
+                            <p>Мило проводим время и трахаем всех попкой</p>
+                            <a href="contact.html?game=dota2&hours=1" class="btn btn-primary btn-small">Выбрать</a>
+                        </div>
+                        <div class="price-option recommended">
+                            <div class="rec-badge">Новичкам</div>
+                            <h4>Обучение основам</h4>
+                            <div class="price">1 500 ₽</div>
+                            <div class="price-save">Лучший старт</div>
+                            <p>2 часа: механики, герои, карта</p>
+                            <a href="contact.html?game=dota2&type=beginner" class="btn btn-secondary btn-small">Выбрать</a>
+                        </div>
+                        <div class="price-option">
+                            <h4>Разбор реплея</h4>
+                            <div class="price">1 200 ₽</div>
+                            <p>Анализ вашей игры + советы</p>
+                            <a href="contact.html?game=dota2&type=analysis" class="btn btn-primary btn-small">Выбрать</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Valorant / CS2 -->
+                <div class="price-card">
+                    <div class="game-icon-large">
+                        <i class="fas fa-crosshairs"></i>
+                    </div>
+                    <h3>Valorant / CS2</h3>
+                    <p class="game-description">Тренировка aim(играем вместе дмчики и общаемся), разбор тактик, казуальные игры или ранкед</p>
+                    
+                    <div class="price-options">
+                        <div class="price-option">
+                            <h4>1 час игры</h4>
+                            <div class="price">900 ₽</div>
+                            <p>Разминка + 2-3 игры</p>
+                            <a href="contact.html?game=valorant&hours=1" class="btn btn-primary btn-small">Выбрать</a>
+                        </div>
+                        <div class="price-option">
+                            <h4>Обучение</h4>
+                            <div class="price">1 200 ₽</div>
+                            <p>Анализ игры + советы</p>
+                            <a href="contact.html?game=valorant&type=training" class="btn btn-secondary btn-small">Выбрать</a>
+                        </div>
+                        <div class="price-option recommended">
+                            <div class="rec-badge">Выгодно</div>
+                            <h4>Пакет "Прогресс"</h4>
+                            <div class="price">3 000 ₽</div>
+                            <div class="price-save">Экономия 600 ₽</div>
+                            <p>4 часа за неделю</p>
+                            <a href="contact.html?game=valorant&hours=4" class="btn btn-primary btn-small">Выбрать</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- MMO / Кооперативы -->
+                <div class="price-card">
+                    <div class="game-icon-large">
+                        <i class="fas fa-dragon"></i>
+                    </div>
+                    <h3>MMO / Кооперативы</h3>
+                    <p class="game-description">World of Warcraft, Genshin Impact, Destiny 2 и другие RPG</p>
+                    
+                    <div class="price-options">
+                        <div class="price-option recommended">
+                            <div class="rec-badge">Новичкам</div>
+                            <h4>Введение в игру</h4>
+                            <div class="price">1 000 ₽</div>
+                            <p>Обучение основам за 2 часа</p>
+                            <a href="contact.html?game=mmo&type=beginner" class="btn btn-secondary btn-small">Выбрать</a>
+                        </div>
+                        <div class="price-option">
+                            <h4>Прохождение</h4>
+                            <div class="price">700 ₽/час</div>
+                            <p>Помощь с квестами и данжами</p>
+                            <a href="contact.html?game=mmo&type=quest" class="btn btn-primary btn-small">Выбрать</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Дополнительные опции -->
+    <section class="extra-options">
+        <div class="container">
+            <h2 class="section-title">Дополнительные опции</h2>
+            <div class="options-grid">
+                <div class="option-card">
+                    <div class="option-icon">
+                        <i class="fas fa-user-friends"></i>
+                    </div>
+                    <h3>Для компании</h3>
+                    <p>Игра с двумя и более друзьями: +300 ₽ за каждого дополнительного игрока</p>
+                </div>
+                <div class="option-card">
+                    <div class="option-icon">
+                        <i class="fas fa-calendar-alt"></i>
+                    </div>
+                    <h3>Абонемент</h3>
+                    <p>10 часов в месяц со скидкой 15%. Гибкое расписание.</p>
+                </div>
+                <div class="option-card">
+                    <div class="option-icon">
+                        <i class="fas fa-gift"></i>
+                    </div>
+                    <h3>Подарочный сертификат</h3>
+                    <p>Красивое оформление в PDF. Идеальный подарок геймеру.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ с отделом про Dota -->
+    <section class="faq">
+        <div class="container">
+            <h2 class="section-title">Частые вопросы</h2>
+            <div class="faq-grid">
+                <div class="faq-item">
+                    <h3><i class="fas fa-question-circle"></i> Как проходит игра?</h3>
+                    <p>Подключаемся в Discord (я вышлю инвайтик), общаемся в голосовом чате, играем вместе..</p>
+                </div>
+                <div class="faq-item">
+                    <h3><i class="fab fa-dota"></i> Dota 2: сколько у тебя MMR?</h3>
+                    <p>Играю на уровне божика. Могу помочь с героями 3-5 позиции, стратегией и механиками игры.</p>
+                </div>
+                <div class="faq-item">
+                    <h3><i class="fas fa-money-bill-wave"></i> Как оплатить?</h3>
+                    <p>После бронирования вышлю реквизиты для оплаты (СБП, карта). Время пошло после подтверждения оплаты.</p>
+                </div>
+                <div class="faq-item">
+                    <h3><i class="fas fa-calendar-times"></i> Что если я не смогу?</h3>
+                    <p>Отмена бесплатно за 24 часа. При отмене позже — возврат 50%. Если не пришёл  — оплата не возвращается.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Призыв к действию -->
+    <section class="games-cta">
+        <div class="container">
+            <h2>Готов играть?</h2>
+            <p>Выбери игру и удобное время, и мы устроим отличную игровую сессию!</p>
+            <a href="contact.html" class="btn btn-primary btn-large">
+                <i class="fas fa-calendar-check"></i> Забронировать время
+            </a>
+            <p style="margin-top: 20px; font-size: 16px; opacity: 0.8;">
+                <i class="fas fa-info-circle"></i> Хочешь другую игру? <a href="contact.html" style="color: white; text-decoration: underline;">Напиши</a> — обсудим!
+            </p>
+        </div>
+    </section>
+
+    <!-- Подвал -->
+    <footer class="footer">
+        <div class="container">
+            <p>© 2023 ManunyaGame. Играем с душой.</p>
+            <div class="footer-links">
+                <a href="#"><i class="fab fa-discord"></i> Discord</a>
+                <a href="#"><i class="fab fa-telegram"></i> Telegram</a>
+                <a href="#"><i class="fab fa-twitch"></i> Twitch</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Пузырьки (ТАКИЕ ЖЕ!) -->
+    <div class="waves-container">
+        <div class="bubble bubble-1"></div>
+        <div class="bubble bubble-2"></div>
+        <div class="bubble bubble-3"></div>
+        <div class="bubble bubble-4"></div>
+        <div class="bubble bubble-5"></div>
+        <div class="bubble bubble-6"></div>
+        <div class="bubble bubble-7"></div>
+        <div class="bubble bubble-8"></div>
+        <div class="bubble bubble-9"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
